@@ -28,29 +28,35 @@ Finally, on your application target's "General" settings tab, in the "Linked Fra
 Like [Pistachio](https://github.com/felixjendrusch/Pistachio), Pistachiargo is all about [lenses](http://chris.eidhof.nl/posts/lenses-in-swift.html):
 
 ```swift
-struct Person {
-  var name: String = ""
-  var age: Int = 0
-  var origin: Origin? = nil
-  var children: [Person]? = nil
+struct Origin {
+  var city: String
 
-  init() {}
-
-  init(name: String, origin: Origin) {
-    self.name = name
-    self.origin = origin
+  init(city: String = "") {
+    self.city = city
   }
 }
 ```
 
 ```swift
-struct Origin {
-  var city: String = ""
+struct OriginLenses {
+  static let city = Lens<Origin, String>(get: { $0.city }, set: { (inout origin: Origin, city) in
+    origin.city = city
+  })
+}
+```
 
-  init() {}
+```swift
+struct Person {
+  var name: String
+  var age: Int
+  var origin: Origin?
+  var children: [Person]?
 
-  init(city: String) {
-    self.city = city
+  init(name: String = "", age: Int = 0, origin: Origin? = nil, children: [Person]? = nil) {
+    self.name = name
+    self.age = age
+    self.origin = origin
+    self.children = children
   }
 }
 ```
@@ -75,14 +81,6 @@ struct PersonLenses {
 }
 ```
 
-```swift
-struct OriginLenses {
-  static let city = Lens<Origin, String>(get: { $0.city }, set: { (inout origin: Origin, city) in
-    origin.city = city
-  })
-}
-```
-
 However, Pistachiargo ships with a lot of JSON value transformers, convenience functions and a JSON adapter:
 
 ```swift
@@ -95,8 +93,8 @@ struct JSONAdapters {
     return JSONAdapter(specification: [
       "name": JSONString(PersonLenses.name),
       "age": JSONNumber(PersonLenses.age),
-      "city": JSONObject(PersonLenses.origin, .JSONNull)(adapter: origin, model: Origin()),
-      "children": JSONArray(PersonLenses.children, .JSONNull)(adapter: adapter, model: Person())
+      "city": JSONObject(PersonLenses.origin)(adapter: origin, model: Origin()),
+      "children": JSONArray(PersonLenses.children)(adapter: adapter, model: Person())
     ])
   }
 }
@@ -108,8 +106,18 @@ JSON adapters handle encoding to and decoding from JSON:
 let adapter = JSONAdapters.person
 
 var person = Person(name: "Felix", origin: Origin(city: "Berlin"))
-var data = adapter.encode(person) // == .Success(Box(.JSONObject([ "name": .JSONString("Seb"), "origin": .JSONObject([ "city": .JSONString("Berlin") ]) ])))
-adapter.decode(Person(), from: data.value!) // == .Success(Box(person))
+var data = adapter.encode(person)
+// == .Success(Box(.JSONObject([
+//   "name": .JSONString("Felix"),
+//   "age": .JSONNumber(0),
+//   "origin": .JSONObject([
+//     "city": .JSONString("Berlin")
+//   ]),
+//   "children": .JSONNull
+// ])))
+
+adapter.decode(Person(), from: data.value!)
+// == .Success(Box(person))
 ```
 
 The return value of both `encode` and `decode` is a `Result` (by [LlamaKit](https://github.com/LlamaKit/LlamaKit)), which either holds the encoded/decoded value or an error. This enables you to gracefully handle coding errors.

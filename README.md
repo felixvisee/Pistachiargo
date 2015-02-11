@@ -86,14 +86,14 @@ However, Pistachiargo ships with a lot of JSON value transformers, convenience f
 ```swift
 struct JSONAdapters {
   static let origin = JSONAdapter(specification: [
-    "city": JSONString(OriginLenses.city)
+    "city_name": JSONString(OriginLenses.city)
   ])
 
   static let person: JSONAdapter<Person> = fix { adapter in
     return JSONAdapter(specification: [
       "name": JSONString(PersonLenses.name),
       "age": JSONNumber(PersonLenses.age),
-      "city": JSONObject(PersonLenses.origin)(adapter: origin, model: Origin()),
+      "origin": JSONObject(PersonLenses.origin)(adapter: origin, model: Origin()),
       "children": JSONArray(PersonLenses.children)(adapter: adapter, model: Person())
     ])
   }
@@ -111,7 +111,7 @@ var data = adapter.encode(person)
 //   "name": .JSONString("Felix"),
 //   "age": .JSONNumber(0),
 //   "origin": .JSONObject([
-//     "city": .JSONString("Berlin")
+//     "city_name": .JSONString("Berlin")
 //   ]),
 //   "children": .JSONNull
 // ])))

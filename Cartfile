@@ -1,3 +1,2 @@
+github "felixjendrusch/Pistachio" ~> 0.1
 github "thoughtbot/Argo" ~> 0.3
-# github "felixjendrusch/Pistachio" ~> 0.1
-git "/Users/felix/Developer/Pistachio" "master"

@@ -17,10 +17,6 @@
 		DCA5B9E01A8ACA2700667D32 /* Pistachio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA5B9DE1A8ACA2700667D32 /* Pistachio.framework */; };
 		DCA5B9E51A8ACA4900667D32 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA5B9E31A8ACA4900667D32 /* Nimble.framework */; };
 		DCA5B9E61A8ACA4900667D32 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA5B9E41A8ACA4900667D32 /* Quick.framework */; };
-		DCA5B9E71A8AD13200667D32 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA5B9DD1A8ACA2700667D32 /* Argo.framework */; };
-		DCA5B9E81A8AD13200667D32 /* Pistachio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA5B9DE1A8ACA2700667D32 /* Pistachio.framework */; };
-		DCA5B9EA1A8AD13200667D32 /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA5B9E91A8AD13200667D32 /* LlamaKit.framework */; };
-		DCA5B9EC1A8AD17100667D32 /* Runes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA5B9EB1A8AD17100667D32 /* Runes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,10 +63,6 @@
 			files = (
 				DCA5B9E61A8ACA4900667D32 /* Quick.framework in Frameworks */,
 				DCA5B9E51A8ACA4900667D32 /* Nimble.framework in Frameworks */,
-				DCA5B9EA1A8AD13200667D32 /* LlamaKit.framework in Frameworks */,
-				DCA5B9E81A8AD13200667D32 /* Pistachio.framework in Frameworks */,
-				DCA5B9EC1A8AD17100667D32 /* Runes.framework in Frameworks */,
-				DCA5B9E71A8AD13200667D32 /* Argo.framework in Frameworks */,
 				DCA5B9BF1A8AC74800667D32 /* Pistachiargo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -81,14 +73,9 @@
 		DCA5B9A91A8AC74800667D32 = {
 			isa = PBXGroup;
 			children = (
-				DCA5B9E41A8ACA4900667D32 /* Quick.framework */,
-				DCA5B9E31A8ACA4900667D32 /* Nimble.framework */,
-				DCA5B9E91A8AD13200667D32 /* LlamaKit.framework */,
-				DCA5B9DE1A8ACA2700667D32 /* Pistachio.framework */,
-				DCA5B9EB1A8AD17100667D32 /* Runes.framework */,
-				DCA5B9DD1A8ACA2700667D32 /* Argo.framework */,
 				DCA5B9B51A8AC74800667D32 /* Pistachiargo */,
 				DCA5B9C21A8AC74800667D32 /* PistachiargoTests */,
+				DCDA378F1A9402DA00C55699 /* Frameworks */,
 				DCA5B9B41A8AC74800667D32 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -139,6 +126,19 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		DCDA378F1A9402DA00C55699 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCA5B9E41A8ACA4900667D32 /* Quick.framework */,
+				DCA5B9E31A8ACA4900667D32 /* Nimble.framework */,
+				DCA5B9E91A8AD13200667D32 /* LlamaKit.framework */,
+				DCA5B9DE1A8ACA2700667D32 /* Pistachio.framework */,
+				DCA5B9EB1A8AD17100667D32 /* Runes.framework */,
+				DCA5B9DD1A8ACA2700667D32 /* Argo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -161,7 +161,6 @@
 				DCA5B9AF1A8AC74800667D32 /* Frameworks */,
 				DCA5B9B01A8AC74800667D32 /* Headers */,
 				DCA5B9B11A8AC74800667D32 /* Resources */,
-				DCA5B9CF1A8AC81400667D32 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -244,21 +243,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		DCA5B9CF1A8AC81400667D32 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Pistachio.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Argo.framework",
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
-		};
 		DCA5B9D01A8AC86100667D32 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -490,6 +474,7 @@
 				DCA5B9CB1A8AC74800667D32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DCA5B9CC1A8AC74800667D32 /* Build configuration list for PBXNativeTarget "PistachiargoTests" */ = {
 			isa = XCConfigurationList;
@@ -498,6 +483,7 @@
 				DCA5B9CE1A8AC74800667D32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

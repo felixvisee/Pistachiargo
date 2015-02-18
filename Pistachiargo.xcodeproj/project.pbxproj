@@ -43,8 +43,6 @@
 		DCA5B9DE1A8ACA2700667D32 /* Pistachio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pistachio.framework; path = Carthage/Build/iOS/Pistachio.framework; sourceTree = "<group>"; };
 		DCA5B9E31A8ACA4900667D32 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		DCA5B9E41A8ACA4900667D32 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
-		DCA5B9E91A8AD13200667D32 /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LlamaKit.framework; path = Carthage/Build/iOS/LlamaKit.framework; sourceTree = "<group>"; };
-		DCA5B9EB1A8AD17100667D32 /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/iOS/Runes.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,9 +129,7 @@
 			children = (
 				DCA5B9E41A8ACA4900667D32 /* Quick.framework */,
 				DCA5B9E31A8ACA4900667D32 /* Nimble.framework */,
-				DCA5B9E91A8AD13200667D32 /* LlamaKit.framework */,
 				DCA5B9DE1A8ACA2700667D32 /* Pistachio.framework */,
-				DCA5B9EB1A8AD17100667D32 /* Runes.framework */,
 				DCA5B9DD1A8ACA2700667D32 /* Argo.framework */,
 			);
 			name = Frameworks;

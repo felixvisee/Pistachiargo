@@ -12,14 +12,14 @@ public let ErrorInvalidInput = 1
 public struct JSONValueTransformers {
     public static let nsNumber: ReversibleValueTransformer<NSNumber, JSONValue, NSError> = ReversibleValueTransformer(transformClosure: { value in
         return Result.success(.JSONNumber(value))
-    }, reverseTransformClosure: { value in
-        switch value {
-        case .JSONNumber(let value):
+    }, reverseTransformClosure: { transformedValue in
+        switch transformedValue {
+        case let .JSONNumber(value):
             return Result.success(value)
         default:
             let userInfo = [
-                NSLocalizedDescriptionKey: NSLocalizedString("Could not decode number from JSON", comment: ""),
-                NSLocalizedFailureReasonErrorKey: String(format: NSLocalizedString("Expected a JSON number, got: %@.", comment: ""), value.description)
+                NSLocalizedDescriptionKey: NSLocalizedString("Could not transform JSONValue to NSNumber", comment: ""),
+                NSLocalizedFailureReasonErrorKey: String(format: NSLocalizedString("Expected a .JSONNumber, got: %@.", comment: ""), transformedValue.description)
             ]
 
             return Result.failure(NSError(domain: ErrorDomain, code: ErrorInvalidInput, userInfo: userInfo))
@@ -80,14 +80,14 @@ public struct JSONValueTransformers {
 
     public static let bool: ReversibleValueTransformer<Bool, JSONValue, NSError> = ReversibleValueTransformer(transformClosure: { value in
         return Result.success(.JSONNumber(value))
-    }, reverseTransformClosure: { value in
-        switch value {
-        case .JSONNumber(let value):
+    }, reverseTransformClosure: { transformedValue in
+        switch transformedValue {
+        case let .JSONNumber(value):
             return Result.success(value.boolValue)
         default:
             let userInfo = [
-                NSLocalizedDescriptionKey: NSLocalizedString("Could not decode bool from JSON", comment: ""),
-                NSLocalizedFailureReasonErrorKey: String(format: NSLocalizedString("Expected a JSON bool, got: %@.", comment: ""), value.description)
+                NSLocalizedDescriptionKey: NSLocalizedString("Could not transform JSONValue to Bool", comment: ""),
+                NSLocalizedFailureReasonErrorKey: String(format: NSLocalizedString("Expected a .JSONNumber, got: %@.", comment: ""), transformedValue.description)
             ]
 
             return Result.failure(NSError(domain: ErrorDomain, code: ErrorInvalidInput, userInfo: userInfo))
@@ -96,14 +96,14 @@ public struct JSONValueTransformers {
 
     public static let string: ReversibleValueTransformer<String, JSONValue, NSError> = ReversibleValueTransformer(transformClosure: { value in
         return Result.success(.JSONString(value))
-    }, reverseTransformClosure: { value in
-        switch value {
-        case .JSONString(let value):
+    }, reverseTransformClosure: { transformedValue in
+        switch transformedValue {
+        case let .JSONString(value):
             return Result.success(value)
         default:
             let userInfo = [
-                NSLocalizedDescriptionKey: NSLocalizedString("Could not decode string from JSON", comment: ""),
-                NSLocalizedFailureReasonErrorKey: String(format: NSLocalizedString("Expected a JSON string, got: %@.", comment: ""), value.description)
+                NSLocalizedDescriptionKey: NSLocalizedString("Could not transform JSONValue to String", comment: ""),
+                NSLocalizedFailureReasonErrorKey: String(format: NSLocalizedString("Expected a .JSONString, got: %@.", comment: ""), transformedValue.description)
             ]
 
             return Result.failure(NSError(domain: ErrorDomain, code: ErrorInvalidInput, userInfo: userInfo))
@@ -112,14 +112,14 @@ public struct JSONValueTransformers {
 
     public static let dictionary: ReversibleValueTransformer<[String: JSONValue], JSONValue, NSError> = ReversibleValueTransformer(transformClosure: { value in
         return Result.success(.JSONObject(value))
-    }, reverseTransformClosure: { value in
-        switch value {
-        case .JSONObject(let value):
+    }, reverseTransformClosure: { transformedValue in
+        switch transformedValue {
+        case let .JSONObject(value):
             return Result.success(value)
         default:
             let userInfo = [
-                NSLocalizedDescriptionKey: NSLocalizedString("Could not decode dictionary from JSON", comment: ""),
-                NSLocalizedFailureReasonErrorKey: String(format: NSLocalizedString("Expected a JSON dictionary, got: %@.", comment: ""), value.description)
+                NSLocalizedDescriptionKey: NSLocalizedString("Could not transform JSONValue to [String: JSONValue]", comment: ""),
+                NSLocalizedFailureReasonErrorKey: String(format: NSLocalizedString("Expected a .JSONObject, got: %@.", comment: ""), transformedValue.description)
             ]
 
             return Result.failure(NSError(domain: ErrorDomain, code: ErrorInvalidInput, userInfo: userInfo))
@@ -128,14 +128,14 @@ public struct JSONValueTransformers {
 
     public static let array: ReversibleValueTransformer<[JSONValue], JSONValue, NSError> = ReversibleValueTransformer(transformClosure: { value in
         return Result.success(.JSONArray(value))
-    }, reverseTransformClosure: { value in
-        switch value {
-        case .JSONArray(let value):
+    }, reverseTransformClosure: { transformedValue in
+        switch transformedValue {
+        case let .JSONArray(value):
             return Result.success(value)
         default:
             let userInfo = [
-                NSLocalizedDescriptionKey: NSLocalizedString("Could not decode array from JSON", comment: ""),
-                NSLocalizedFailureReasonErrorKey: String(format: NSLocalizedString("Expected a JSON array, got: %@.", comment: ""), value.description)
+                NSLocalizedDescriptionKey: NSLocalizedString("Could not transform JSONValue to [JSONValue]", comment: ""),
+                NSLocalizedFailureReasonErrorKey: String(format: NSLocalizedString("Expected a .JSONArray, got: %@.", comment: ""), transformedValue.description)
             ]
 
             return Result.failure(NSError(domain: ErrorDomain, code: ErrorInvalidInput, userInfo: userInfo))

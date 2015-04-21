@@ -1,7 +1,6 @@
 //  Copyright (c) 2015 Felix Jendrusch. All rights reserved.
 
 import Result
-import Monocle
 import Pistachio
 import Argo
 
@@ -14,7 +13,9 @@ public struct JSONAdapter<Value>: AdapterType {
     }
 
     public init(specification: Adapter.Specification, @autoclosure(escaping) value: () -> Value) {
-        adapter = DictionaryAdapter(specification: specification, dictionaryTransformer: JSONValueTransformers.dictionary, value: value)
+        self.init(specification: specification, valueClosure: { _ in
+            return Result.success(value())
+        })
     }
 
     public func transform(value: Value) -> Result<JSONValue, NSError> {

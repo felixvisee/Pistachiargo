@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DC2980121AE70855005AA6D6 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2980111AE70855005AA6D6 /* Node.swift */; };
+		DC2980131AE70855005AA6D6 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC2980111AE70855005AA6D6 /* Node.swift */; };
 		DCA5B9B91A8AC74800667D32 /* Pistachiargo.h in Headers */ = {isa = PBXBuildFile; fileRef = DCA5B9B81A8AC74800667D32 /* Pistachiargo.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DCA5B9BF1A8AC74800667D32 /* Pistachiargo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA5B9B31A8AC74800667D32 /* Pistachiargo.framework */; };
 		DCA5B9D41A8AC89700667D32 /* JSONAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5B9D11A8AC89700667D32 /* JSONAdapter.swift */; };
@@ -79,6 +81,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		DC2980111AE70855005AA6D6 /* Node.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		DCA5B9B31A8AC74800667D32 /* Pistachiargo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pistachiargo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DCA5B9B71A8AC74800667D32 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DCA5B9B81A8AC74800667D32 /* Pistachiargo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Pistachiargo.h; sourceTree = "<group>"; };
@@ -150,6 +153,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DC2980101AE70855005AA6D6 /* Fixtures */ = {
+			isa = PBXGroup;
+			children = (
+				DC2980111AE70855005AA6D6 /* Node.swift */,
+			);
+			path = Fixtures;
+			sourceTree = "<group>";
+		};
 		DCA5B9A91A8AC74800667D32 = {
 			isa = PBXGroup;
 			children = (
@@ -195,6 +206,7 @@
 			children = (
 				DCA5B9D71A8AC93700667D32 /* JSONAdapterSpec.swift */,
 				DCA5B9D81A8AC93700667D32 /* JSONValueTransformersSpec.swift */,
+				DC2980101AE70855005AA6D6 /* Fixtures */,
 				DCA5B9C31A8AC74800667D32 /* Supporting Files */,
 			);
 			path = PistachiargoTests;
@@ -426,6 +438,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC2980121AE70855005AA6D6 /* Node.swift in Sources */,
 				DCA5B9DB1A8AC93700667D32 /* JSONValueTransformersSpec.swift in Sources */,
 				DCA5B9DA1A8AC93700667D32 /* JSONAdapterSpec.swift in Sources */,
 			);
@@ -444,6 +457,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC2980131AE70855005AA6D6 /* Node.swift in Sources */,
 				DCC740151AE6B7EA00D7F341 /* JSONValueTransformersSpec.swift in Sources */,
 				DCC740141AE6B7EA00D7F341 /* JSONAdapterSpec.swift in Sources */,
 			);
@@ -749,6 +763,7 @@
 				DCC73FF01AE6B67100D7F341 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DCC73FF11AE6B67100D7F341 /* Build configuration list for PBXNativeTarget "Pistachiargo-MacTests" */ = {
 			isa = XCConfigurationList;
@@ -757,6 +772,7 @@
 				DCC73FF31AE6B67100D7F341 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

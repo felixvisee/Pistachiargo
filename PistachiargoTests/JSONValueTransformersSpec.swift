@@ -3,15 +3,12 @@
 import Quick
 import Nimble
 
-import Result
-import Pistachio
-
 import Argo
 import Pistachiargo
 
 class JSONValueTransformersSpec: QuickSpec {
     override func spec() {
-        describe("An NSNumber to JSON value transformer") {
+        describe("An NSNumber to JSONValue value transformer") {
             let valueTransformer = JSONValueTransformers.nsNumber
 
             it("should transform a value") {
@@ -33,7 +30,7 @@ class JSONValueTransformersSpec: QuickSpec {
             }
         }
 
-        describe("A String to JSON value transformer") {
+        describe("A String to JSONValue value transformer") {
             let valueTransformer = JSONValueTransformers.string
 
             it("should transform a value") {
@@ -55,7 +52,7 @@ class JSONValueTransformersSpec: QuickSpec {
             }
         }
 
-        describe("A Bool to JSON value transformer") {
+        describe("A Bool to JSONValue value transformer") {
             let valueTransformer = JSONValueTransformers.bool
 
             it("should transform a value") {
@@ -77,7 +74,7 @@ class JSONValueTransformersSpec: QuickSpec {
             }
         }
 
-        describe("A [String: JSON] to JSON value transformer") {
+        describe("A [String: JSONValue] to JSONValue value transformer") {
             let valueTransformer = JSONValueTransformers.dictionary
 
             it("should transform a value") {
@@ -99,7 +96,7 @@ class JSONValueTransformersSpec: QuickSpec {
             }
         }
 
-        describe("A [JSON] to JSON value transformer") {
+        describe("A [JSONValue] to JSONValue value transformer") {
             let valueTransformer = JSONValueTransformers.array
 
             it("should transform a value") {

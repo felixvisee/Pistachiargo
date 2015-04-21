@@ -6,23 +6,28 @@
 //  Copyright (c) 2015 Felix Jendrusch. All rights reserved.
 //
 
-import LlamaKit
+import Result
+import Monocle
 import Pistachio
-
 import Argo
 
-public struct JSONAdapter<Model>: Adapter {
-    private let adapter: DictionaryAdapter<Model, JSONValue, NSError>
+public struct JSONAdapter<Value>: AdapterType {
+    private typealias Adapter = DictionaryAdapter<String, Value, JSONValue, NSError>
+    private let adapter: Adapter
 
-    public init(specification: [String: Lens<Result<Model, NSError>, Result<JSONValue, NSError>>]) {
-        adapter = DictionaryAdapter(specification: specification, dictionaryTansformer: JSONValueTransformers.dictionary)
+    public init(specification: Adapter.Specification, valueClosure: JSONValue -> Result<Value, NSError>) {
+        adapter = DictionaryAdapter(specification: specification, dictionaryTransformer: JSONValueTransformers.dictionary, valueClosure: valueClosure)
     }
 
-    public func encode(model: Model) -> Result<JSONValue, NSError> {
-        return adapter.encode(model)
+    public init(specification: Adapter.Specification, @autoclosure(escaping) value: () -> Value) {
+        adapter = DictionaryAdapter(specification: specification, dictionaryTransformer: JSONValueTransformers.dictionary, value: value)
     }
 
-    public func decode(model: Model, from data: JSONValue) -> Result<Model, NSError> {
-        return adapter.decode(model, from: data)
+    public func transform(value: Value) -> Result<JSONValue, NSError> {
+        return adapter.transform(value)
+    }
+
+    public func reverseTransform(transformedValue: JSONValue) -> Result<Value, NSError> {
+        return adapter.reverseTransform(transformedValue)
     }
 }

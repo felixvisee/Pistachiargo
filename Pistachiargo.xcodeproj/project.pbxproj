@@ -17,6 +17,28 @@
 		DCA5B9E01A8ACA2700667D32 /* Pistachio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA5B9DE1A8ACA2700667D32 /* Pistachio.framework */; };
 		DCA5B9E51A8ACA4900667D32 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA5B9E31A8ACA4900667D32 /* Nimble.framework */; };
 		DCA5B9E61A8ACA4900667D32 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCA5B9E41A8ACA4900667D32 /* Quick.framework */; };
+		DCC73FE61AE6B67100D7F341 /* Pistachiargo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC73FDB1AE6B67100D7F341 /* Pistachiargo.framework */; };
+		DCC73FFE1AE6B79E00D7F341 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC73FFA1AE6B74E00D7F341 /* Result.framework */; };
+		DCC73FFF1AE6B79E00D7F341 /* ValueTransformer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC73FFC1AE6B74E00D7F341 /* ValueTransformer.framework */; };
+		DCC740001AE6B79E00D7F341 /* Pistachio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC73FF81AE6B74E00D7F341 /* Pistachio.framework */; };
+		DCC740011AE6B79E00D7F341 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC73FF51AE6B74E00D7F341 /* Argo.framework */; };
+		DCC740021AE6B7AA00D7F341 /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC73FFA1AE6B74E00D7F341 /* Result.framework */; };
+		DCC740031AE6B7AA00D7F341 /* ValueTransformer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC73FFC1AE6B74E00D7F341 /* ValueTransformer.framework */; };
+		DCC740041AE6B7AA00D7F341 /* Pistachio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC73FF81AE6B74E00D7F341 /* Pistachio.framework */; };
+		DCC740051AE6B7AA00D7F341 /* Argo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCC73FF51AE6B74E00D7F341 /* Argo.framework */; };
+		DCC740071AE6B7B600D7F341 /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCC73FF91AE6B74E00D7F341 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCC740081AE6B7B600D7F341 /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCC73FF71AE6B74E00D7F341 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCC740091AE6B7B700D7F341 /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCC73FFA1AE6B74E00D7F341 /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCC7400A1AE6B7B700D7F341 /* ValueTransformer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCC73FFC1AE6B74E00D7F341 /* ValueTransformer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCC7400B1AE6B7B700D7F341 /* Monocle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCC73FF61AE6B74E00D7F341 /* Monocle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCC7400C1AE6B7B700D7F341 /* Pistachio.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCC73FF81AE6B74E00D7F341 /* Pistachio.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCC7400D1AE6B7B700D7F341 /* Runes.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCC73FFB1AE6B74E00D7F341 /* Runes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCC7400E1AE6B7B700D7F341 /* Argo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCC73FF51AE6B74E00D7F341 /* Argo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCC7400F1AE6B7DE00D7F341 /* Pistachiargo.h in Headers */ = {isa = PBXBuildFile; fileRef = DCA5B9B81A8AC74800667D32 /* Pistachiargo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DCC740101AE6B7E300D7F341 /* JSONAdapter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5B9D11A8AC89700667D32 /* JSONAdapter.swift */; };
+		DCC740111AE6B7E300D7F341 /* JSONValueTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5B9D21A8AC89700667D32 /* JSONValueTransformers.swift */; };
+		DCC740141AE6B7EA00D7F341 /* JSONAdapterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5B9D71A8AC93700667D32 /* JSONAdapterSpec.swift */; };
+		DCC740151AE6B7EA00D7F341 /* JSONValueTransformersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5B9D81A8AC93700667D32 /* JSONValueTransformersSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,7 +49,34 @@
 			remoteGlobalIDString = DCA5B9B21A8AC74800667D32;
 			remoteInfo = Pistachiargo;
 		};
+		DCC73FE71AE6B67100D7F341 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DCA5B9AA1A8AC74800667D32 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DCC73FDA1AE6B67100D7F341;
+			remoteInfo = "Pistachiargo-Mac";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		DCC740061AE6B7B000D7F341 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DCC740071AE6B7B600D7F341 /* Quick.framework in CopyFiles */,
+				DCC740081AE6B7B600D7F341 /* Nimble.framework in CopyFiles */,
+				DCC740091AE6B7B700D7F341 /* Result.framework in CopyFiles */,
+				DCC7400A1AE6B7B700D7F341 /* ValueTransformer.framework in CopyFiles */,
+				DCC7400B1AE6B7B700D7F341 /* Monocle.framework in CopyFiles */,
+				DCC7400C1AE6B7B700D7F341 /* Pistachio.framework in CopyFiles */,
+				DCC7400D1AE6B7B700D7F341 /* Runes.framework in CopyFiles */,
+				DCC7400E1AE6B7B700D7F341 /* Argo.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		DCA5B9B31A8AC74800667D32 /* Pistachiargo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pistachiargo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -43,6 +92,16 @@
 		DCA5B9DE1A8ACA2700667D32 /* Pistachio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pistachio.framework; path = Carthage/Build/iOS/Pistachio.framework; sourceTree = "<group>"; };
 		DCA5B9E31A8ACA4900667D32 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		DCA5B9E41A8ACA4900667D32 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
+		DCC73FDB1AE6B67100D7F341 /* Pistachiargo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pistachiargo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCC73FE51AE6B67100D7F341 /* PistachiargoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PistachiargoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DCC73FF51AE6B74E00D7F341 /* Argo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Argo.framework; path = Carthage/Build/Mac/Argo.framework; sourceTree = "<group>"; };
+		DCC73FF61AE6B74E00D7F341 /* Monocle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Monocle.framework; path = Carthage/Build/Mac/Monocle.framework; sourceTree = "<group>"; };
+		DCC73FF71AE6B74E00D7F341 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = "<group>"; };
+		DCC73FF81AE6B74E00D7F341 /* Pistachio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pistachio.framework; path = Carthage/Build/Mac/Pistachio.framework; sourceTree = "<group>"; };
+		DCC73FF91AE6B74E00D7F341 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = "<group>"; };
+		DCC73FFA1AE6B74E00D7F341 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
+		DCC73FFB1AE6B74E00D7F341 /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/Mac/Runes.framework; sourceTree = "<group>"; };
+		DCC73FFC1AE6B74E00D7F341 /* ValueTransformer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ValueTransformer.framework; path = Carthage/Build/Mac/ValueTransformer.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +124,29 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DCC73FD71AE6B67100D7F341 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCC73FFE1AE6B79E00D7F341 /* Result.framework in Frameworks */,
+				DCC73FFF1AE6B79E00D7F341 /* ValueTransformer.framework in Frameworks */,
+				DCC740001AE6B79E00D7F341 /* Pistachio.framework in Frameworks */,
+				DCC740011AE6B79E00D7F341 /* Argo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC73FE21AE6B67100D7F341 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCC740021AE6B7AA00D7F341 /* Result.framework in Frameworks */,
+				DCC740031AE6B7AA00D7F341 /* ValueTransformer.framework in Frameworks */,
+				DCC740041AE6B7AA00D7F341 /* Pistachio.framework in Frameworks */,
+				DCC740051AE6B7AA00D7F341 /* Argo.framework in Frameworks */,
+				DCC73FE61AE6B67100D7F341 /* Pistachiargo.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -83,6 +165,8 @@
 			children = (
 				DCA5B9B31A8AC74800667D32 /* Pistachiargo.framework */,
 				DCA5B9BE1A8AC74800667D32 /* PistachiargoTests.xctest */,
+				DCC73FDB1AE6B67100D7F341 /* Pistachiargo.framework */,
+				DCC73FE51AE6B67100D7F341 /* PistachiargoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -124,13 +208,37 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		DCDA378F1A9402DA00C55699 /* Frameworks */ = {
+		DCC73FF41AE6B70C00D7F341 /* iOS */ = {
 			isa = PBXGroup;
 			children = (
 				DCA5B9E41A8ACA4900667D32 /* Quick.framework */,
 				DCA5B9E31A8ACA4900667D32 /* Nimble.framework */,
 				DCA5B9DE1A8ACA2700667D32 /* Pistachio.framework */,
 				DCA5B9DD1A8ACA2700667D32 /* Argo.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		DCC73FFD1AE6B75200D7F341 /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				DCC73FF91AE6B74E00D7F341 /* Quick.framework */,
+				DCC73FF71AE6B74E00D7F341 /* Nimble.framework */,
+				DCC73FFA1AE6B74E00D7F341 /* Result.framework */,
+				DCC73FFC1AE6B74E00D7F341 /* ValueTransformer.framework */,
+				DCC73FF61AE6B74E00D7F341 /* Monocle.framework */,
+				DCC73FF81AE6B74E00D7F341 /* Pistachio.framework */,
+				DCC73FFB1AE6B74E00D7F341 /* Runes.framework */,
+				DCC73FF51AE6B74E00D7F341 /* Argo.framework */,
+			);
+			name = Mac;
+			sourceTree = "<group>";
+		};
+		DCDA378F1A9402DA00C55699 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				DCC73FF41AE6B70C00D7F341 /* iOS */,
+				DCC73FFD1AE6B75200D7F341 /* Mac */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -146,12 +254,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DCC73FD81AE6B67100D7F341 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCC7400F1AE6B7DE00D7F341 /* Pistachiargo.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		DCA5B9B21A8AC74800667D32 /* Pistachiargo */ = {
+		DCA5B9B21A8AC74800667D32 /* Pistachiargo-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DCA5B9C91A8AC74800667D32 /* Build configuration list for PBXNativeTarget "Pistachiargo" */;
+			buildConfigurationList = DCA5B9C91A8AC74800667D32 /* Build configuration list for PBXNativeTarget "Pistachiargo-iOS" */;
 			buildPhases = (
 				DCA5B9AE1A8AC74800667D32 /* Sources */,
 				DCA5B9AF1A8AC74800667D32 /* Frameworks */,
@@ -162,28 +278,64 @@
 			);
 			dependencies = (
 			);
-			name = Pistachiargo;
+			name = "Pistachiargo-iOS";
 			productName = Pistachiargo;
 			productReference = DCA5B9B31A8AC74800667D32 /* Pistachiargo.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		DCA5B9BD1A8AC74800667D32 /* PistachiargoTests */ = {
+		DCA5B9BD1A8AC74800667D32 /* Pistachiargo-iOSTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DCA5B9CC1A8AC74800667D32 /* Build configuration list for PBXNativeTarget "PistachiargoTests" */;
+			buildConfigurationList = DCA5B9CC1A8AC74800667D32 /* Build configuration list for PBXNativeTarget "Pistachiargo-iOSTests" */;
 			buildPhases = (
 				DCA5B9BA1A8AC74800667D32 /* Sources */,
 				DCA5B9BB1A8AC74800667D32 /* Frameworks */,
 				DCA5B9BC1A8AC74800667D32 /* Resources */,
-				DCA5B9D01A8AC86100667D32 /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 				DCA5B9C11A8AC74800667D32 /* PBXTargetDependency */,
 			);
-			name = PistachiargoTests;
+			name = "Pistachiargo-iOSTests";
 			productName = PistachiargoTests;
 			productReference = DCA5B9BE1A8AC74800667D32 /* PistachiargoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		DCC73FDA1AE6B67100D7F341 /* Pistachiargo-Mac */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCC73FEE1AE6B67100D7F341 /* Build configuration list for PBXNativeTarget "Pistachiargo-Mac" */;
+			buildPhases = (
+				DCC73FD61AE6B67100D7F341 /* Sources */,
+				DCC73FD71AE6B67100D7F341 /* Frameworks */,
+				DCC73FD81AE6B67100D7F341 /* Headers */,
+				DCC73FD91AE6B67100D7F341 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pistachiargo-Mac";
+			productName = "Pistachiargo-Mac";
+			productReference = DCC73FDB1AE6B67100D7F341 /* Pistachiargo.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		DCC73FE41AE6B67100D7F341 /* Pistachiargo-MacTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DCC73FF11AE6B67100D7F341 /* Build configuration list for PBXNativeTarget "Pistachiargo-MacTests" */;
+			buildPhases = (
+				DCC73FE11AE6B67100D7F341 /* Sources */,
+				DCC73FE21AE6B67100D7F341 /* Frameworks */,
+				DCC73FE31AE6B67100D7F341 /* Resources */,
+				DCC740061AE6B7B000D7F341 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DCC73FE81AE6B67100D7F341 /* PBXTargetDependency */,
+			);
+			name = "Pistachiargo-MacTests";
+			productName = "Pistachiargo-MacTests";
+			productReference = DCC73FE51AE6B67100D7F341 /* PistachiargoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -201,6 +353,12 @@
 					DCA5B9BD1A8AC74800667D32 = {
 						CreatedOnToolsVersion = 6.1.1;
 					};
+					DCC73FDA1AE6B67100D7F341 = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					DCC73FE41AE6B67100D7F341 = {
+						CreatedOnToolsVersion = 6.3;
+					};
 				};
 			};
 			buildConfigurationList = DCA5B9AD1A8AC74800667D32 /* Build configuration list for PBXProject "Pistachiargo" */;
@@ -215,8 +373,10 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				DCA5B9B21A8AC74800667D32 /* Pistachiargo */,
-				DCA5B9BD1A8AC74800667D32 /* PistachiargoTests */,
+				DCA5B9B21A8AC74800667D32 /* Pistachiargo-iOS */,
+				DCA5B9BD1A8AC74800667D32 /* Pistachiargo-iOSTests */,
+				DCC73FDA1AE6B67100D7F341 /* Pistachiargo-Mac */,
+				DCC73FE41AE6B67100D7F341 /* Pistachiargo-MacTests */,
 			);
 		};
 /* End PBXProject section */
@@ -236,29 +396,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		DCA5B9D01A8AC86100667D32 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
+		DCC73FD91AE6B67100D7F341 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputPaths = (
-				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/LlamaKit.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Pistachio.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Runes.framework",
-				"$(SRCROOT)/Carthage/Build/iOS/Argo.framework",
-			);
-			outputPaths = (
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC73FE31AE6B67100D7F341 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "/usr/local/bin/carthage copy-frameworks";
 		};
-/* End PBXShellScriptBuildPhase section */
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		DCA5B9AE1A8AC74800667D32 /* Sources */ = {
@@ -279,13 +431,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		DCC73FD61AE6B67100D7F341 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCC740101AE6B7E300D7F341 /* JSONAdapter.swift in Sources */,
+				DCC740111AE6B7E300D7F341 /* JSONValueTransformers.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCC73FE11AE6B67100D7F341 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DCC740151AE6B7EA00D7F341 /* JSONValueTransformersSpec.swift in Sources */,
+				DCC740141AE6B7EA00D7F341 /* JSONAdapterSpec.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
 		DCA5B9C11A8AC74800667D32 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = DCA5B9B21A8AC74800667D32 /* Pistachiargo */;
+			target = DCA5B9B21A8AC74800667D32 /* Pistachiargo-iOS */;
 			targetProxy = DCA5B9C01A8AC74800667D32 /* PBXContainerItemProxy */;
+		};
+		DCC73FE81AE6B67100D7F341 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DCC73FDA1AE6B67100D7F341 /* Pistachiargo-Mac */;
+			targetProxy = DCC73FE71AE6B67100D7F341 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -326,8 +501,10 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -366,7 +543,9 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
 				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(PROJECT_NAME)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -383,14 +562,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = Pistachiargo/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(inherited)";
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -404,14 +580,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/Carthage/Build/iOS",
-				);
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/iOS";
 				INFOPLIST_FILE = Pistachiargo/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(inherited)";
 				SKIP_INSTALL = YES;
 			};
 			name = Release;
@@ -431,7 +604,7 @@
 				);
 				INFOPLIST_FILE = PistachiargoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(inherited)Tests";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
@@ -447,7 +620,95 @@
 				);
 				INFOPLIST_FILE = PistachiargoTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "$(inherited)Tests";
+			};
+			name = Release;
+		};
+		DCC73FEF1AE6B67100D7F341 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/Mac";
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = Pistachiargo/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(inherited)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		DCC73FF01AE6B67100D7F341 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = "$(PROJECT_DIR)/Carthage/Build/Mac";
+				FRAMEWORK_VERSION = A;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = Pistachiargo/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(inherited)";
+				SDKROOT = macosx;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		DCC73FF21AE6B67100D7F341 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = PistachiargoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(inherited)Tests";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		DCC73FF31AE6B67100D7F341 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = PistachiargoTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_NAME = "$(inherited)Tests";
+				SDKROOT = macosx;
 			};
 			name = Release;
 		};
@@ -463,7 +724,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DCA5B9C91A8AC74800667D32 /* Build configuration list for PBXNativeTarget "Pistachiargo" */ = {
+		DCA5B9C91A8AC74800667D32 /* Build configuration list for PBXNativeTarget "Pistachiargo-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DCA5B9CA1A8AC74800667D32 /* Debug */,
@@ -472,7 +733,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		DCA5B9CC1A8AC74800667D32 /* Build configuration list for PBXNativeTarget "PistachiargoTests" */ = {
+		DCA5B9CC1A8AC74800667D32 /* Build configuration list for PBXNativeTarget "Pistachiargo-iOSTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				DCA5B9CD1A8AC74800667D32 /* Debug */,
@@ -480,6 +741,22 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		DCC73FEE1AE6B67100D7F341 /* Build configuration list for PBXNativeTarget "Pistachiargo-Mac" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCC73FEF1AE6B67100D7F341 /* Debug */,
+				DCC73FF01AE6B67100D7F341 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		DCC73FF11AE6B67100D7F341 /* Build configuration list for PBXNativeTarget "Pistachiargo-MacTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DCC73FF21AE6B67100D7F341 /* Debug */,
+				DCC73FF31AE6B67100D7F341 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

@@ -9,9 +9,9 @@
 import Quick
 import Nimble
 
-import LlamaKit
+import Result
+import Monocle
 import Pistachio
-
 import Argo
 import Pistachiargo
 
@@ -36,8 +36,8 @@ struct NodeLenses {
 struct JSONAdapters {
     static let node: JSONAdapter<Node> = fix { adapter in
         return JSONAdapter(specification: [
-            "children": JSONArray(NodeLenses.children)(adapter: adapter, model: Node(children: []))
-        ])
+            "children": JSONArray(NodeLenses.children)(adapter: adapter)
+        ], value: Node(children: []))
     }
 }
 
@@ -53,13 +53,13 @@ class JSONAdapterSpec: QuickSpec {
             ])
 
             it("should encode a model") {
-                let result = adapter.encode(Node(children: [ Node(children: []), Node(children: []) ]))
+                let result = adapter.transform(Node(children: [ Node(children: []), Node(children: []) ]))
 
                 expect(result.value).to(equal(json))
             }
 
             it("should decode a model from data") {
-                let result = adapter.decode(Node(children: []), from: json)
+                let result = adapter.reverseTransform(json)
 
                 expect(result.value).to(equal(Node(children: [ Node(children: []), Node(children: []) ])))
             }

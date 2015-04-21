@@ -1,2 +1,2 @@
-github "felixjendrusch/Pistachio" ~> 0.1
-github "thoughtbot/Argo" ~> 0.3
+github "felixjendrusch/Pistachio" ~> 0.2
+github "thoughtbot/Argo" ~> 0.4

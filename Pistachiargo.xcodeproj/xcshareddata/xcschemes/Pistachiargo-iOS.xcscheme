@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DCA5B9B21A8AC74800667D32"
                BuildableName = "Pistachiargo.framework"
-               BlueprintName = "Pistachiargo"
+               BlueprintName = "Pistachiargo-iOS"
                ReferencedContainer = "container:Pistachiargo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -30,7 +30,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DCA5B9BD1A8AC74800667D32"
                BuildableName = "PistachiargoTests.xctest"
-               BlueprintName = "PistachiargoTests"
+               BlueprintName = "Pistachiargo-iOSTests"
                ReferencedContainer = "container:Pistachiargo.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -48,7 +48,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "DCA5B9BD1A8AC74800667D32"
                BuildableName = "PistachiargoTests.xctest"
-               BlueprintName = "PistachiargoTests"
+               BlueprintName = "Pistachiargo-iOSTests"
                ReferencedContainer = "container:Pistachiargo.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -58,7 +58,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DCA5B9B21A8AC74800667D32"
             BuildableName = "Pistachiargo.framework"
-            BlueprintName = "Pistachiargo"
+            BlueprintName = "Pistachiargo-iOS"
             ReferencedContainer = "container:Pistachiargo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -77,7 +77,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DCA5B9B21A8AC74800667D32"
             BuildableName = "Pistachiargo.framework"
-            BlueprintName = "Pistachiargo"
+            BlueprintName = "Pistachiargo-iOS"
             ReferencedContainer = "container:Pistachiargo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -95,7 +95,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "DCA5B9B21A8AC74800667D32"
             BuildableName = "Pistachiargo.framework"
-            BlueprintName = "Pistachiargo"
+            BlueprintName = "Pistachiargo-iOS"
             ReferencedContainer = "container:Pistachiargo.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

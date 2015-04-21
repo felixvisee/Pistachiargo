@@ -6,280 +6,281 @@
 //  Copyright (c) 2015 Felix Jendrusch. All rights reserved.
 //
 
-import LlamaKit
+import Result
+import ValueTransformer
+import Monocle
 import Pistachio
-
 import Argo
 
 public let ErrorDomain = "PistachiargoErrorDomain"
 public let ErrorInvalidInput = 1
 
 public struct JSONValueTransformers {
-    public static let nsNumber: ValueTransformer<NSNumber, JSONValue, NSError> = ValueTransformer(transformClosure: { value in
-        return success(.JSONNumber(value))
+    public static let nsNumber: ReversibleValueTransformer<NSNumber, JSONValue, NSError> = ReversibleValueTransformer(transformClosure: { value in
+        return Result.success(.JSONNumber(value))
     }, reverseTransformClosure: { value in
         switch value {
         case .JSONNumber(let value):
-            return success(value)
+            return Result.success(value)
         default:
             let userInfo = [
                 NSLocalizedDescriptionKey: NSLocalizedString("Could not decode number from JSON", comment: ""),
                 NSLocalizedFailureReasonErrorKey: String(format: NSLocalizedString("Expected a JSON number, got: %@.", comment: ""), value.description)
             ]
 
-            return failure(NSError(domain: ErrorDomain, code: ErrorInvalidInput, userInfo: userInfo))
+            return Result.failure(NSError(domain: ErrorDomain, code: ErrorInvalidInput, userInfo: userInfo))
         }
     })
 
-    public static func number() -> ValueTransformer<Int8, JSONValue, NSError> {
-        return flip(NSNumberValueTransformers.char()) >>> nsNumber
+    public static func number() -> ReversibleValueTransformer<Int8, JSONValue, NSError> {
+        return NSNumberValueTransformers.char() >>> nsNumber
     }
 
-    public static func number() -> ValueTransformer<UInt8, JSONValue, NSError> {
-        return flip(NSNumberValueTransformers.unsignedChar()) >>> nsNumber
+    public static func number() -> ReversibleValueTransformer<UInt8, JSONValue, NSError> {
+        return NSNumberValueTransformers.unsignedChar() >>> nsNumber
     }
 
-    public static func number() -> ValueTransformer<Int16, JSONValue, NSError> {
-        return flip(NSNumberValueTransformers.short()) >>> nsNumber
+    public static func number() -> ReversibleValueTransformer<Int16, JSONValue, NSError> {
+        return NSNumberValueTransformers.short() >>> nsNumber
     }
 
-    public static func number() -> ValueTransformer<UInt16, JSONValue, NSError> {
-        return flip(NSNumberValueTransformers.unsignedShort()) >>> nsNumber
+    public static func number() -> ReversibleValueTransformer<UInt16, JSONValue, NSError> {
+        return NSNumberValueTransformers.unsignedShort() >>> nsNumber
     }
 
-    public static func number() -> ValueTransformer<Int32, JSONValue, NSError> {
-        return flip(NSNumberValueTransformers.int()) >>> nsNumber
+    public static func number() -> ReversibleValueTransformer<Int32, JSONValue, NSError> {
+        return NSNumberValueTransformers.int() >>> nsNumber
     }
 
-    public static func number() -> ValueTransformer<UInt32, JSONValue, NSError> {
-        return flip(NSNumberValueTransformers.unsignedInt()) >>> nsNumber
+    public static func number() -> ReversibleValueTransformer<UInt32, JSONValue, NSError> {
+        return NSNumberValueTransformers.unsignedInt() >>> nsNumber
     }
 
-    public static func number() -> ValueTransformer<Int, JSONValue, NSError> {
-        return flip(NSNumberValueTransformers.long()) >>> nsNumber
+    public static func number() -> ReversibleValueTransformer<Int, JSONValue, NSError> {
+        return NSNumberValueTransformers.long() >>> nsNumber
     }
 
-    public static func number() -> ValueTransformer<UInt, JSONValue, NSError> {
-        return flip(NSNumberValueTransformers.unsignedLong()) >>> nsNumber
+    public static func number() -> ReversibleValueTransformer<UInt, JSONValue, NSError> {
+        return NSNumberValueTransformers.unsignedLong() >>> nsNumber
     }
 
-    public static func number() -> ValueTransformer<Int64, JSONValue, NSError> {
-        return flip(NSNumberValueTransformers.longLong()) >>> nsNumber
+    public static func number() -> ReversibleValueTransformer<Int64, JSONValue, NSError> {
+        return NSNumberValueTransformers.longLong() >>> nsNumber
     }
 
-    public static func number() -> ValueTransformer<UInt64, JSONValue, NSError> {
-        return flip(NSNumberValueTransformers.unsignedLongLong()) >>> nsNumber
+    public static func number() -> ReversibleValueTransformer<UInt64, JSONValue, NSError> {
+        return NSNumberValueTransformers.unsignedLongLong() >>> nsNumber
     }
 
-    public static func number() -> ValueTransformer<Float, JSONValue, NSError> {
-        return flip(NSNumberValueTransformers.float()) >>> nsNumber
+    public static func number() -> ReversibleValueTransformer<Float, JSONValue, NSError> {
+        return NSNumberValueTransformers.float() >>> nsNumber
     }
 
-    public static func number() -> ValueTransformer<Double, JSONValue, NSError> {
-        return flip(NSNumberValueTransformers.double()) >>> nsNumber
+    public static func number() -> ReversibleValueTransformer<Double, JSONValue, NSError> {
+        return NSNumberValueTransformers.double() >>> nsNumber
     }
 
-    public static func number() -> ValueTransformer<Bool, JSONValue, NSError> {
-        return flip(NSNumberValueTransformers.bool()) >>> nsNumber
+    public static func number() -> ReversibleValueTransformer<Bool, JSONValue, NSError> {
+        return NSNumberValueTransformers.bool() >>> nsNumber
     }
 
-    public static let string: ValueTransformer<String, JSONValue, NSError> = ValueTransformer(transformClosure: { value in
-        return success(.JSONString(value))
-    }, reverseTransformClosure: { value in
-        switch value {
-        case .JSONString(let value):
-            return success(value)
-        default:
-            let userInfo = [
-                NSLocalizedDescriptionKey: NSLocalizedString("Could not decode string from JSON", comment: ""),
-                NSLocalizedFailureReasonErrorKey: String(format: NSLocalizedString("Expected a JSON string, got: %@.", comment: ""), value.description)
-            ]
-
-            return failure(NSError(domain: ErrorDomain, code: ErrorInvalidInput, userInfo: userInfo))
-        }
-    })
-
-    public static let bool: ValueTransformer<Bool, JSONValue, NSError> = ValueTransformer(transformClosure: { value in
-        return success(.JSONNumber(value))
+    public static let bool: ReversibleValueTransformer<Bool, JSONValue, NSError> = ReversibleValueTransformer(transformClosure: { value in
+        return Result.success(.JSONNumber(value))
     }, reverseTransformClosure: { value in
         switch value {
         case .JSONNumber(let value):
-            return success(value.boolValue)
+            return Result.success(value.boolValue)
         default:
             let userInfo = [
                 NSLocalizedDescriptionKey: NSLocalizedString("Could not decode bool from JSON", comment: ""),
                 NSLocalizedFailureReasonErrorKey: String(format: NSLocalizedString("Expected a JSON bool, got: %@.", comment: ""), value.description)
             ]
 
-            return failure(NSError(domain: ErrorDomain, code: ErrorInvalidInput, userInfo: userInfo))
+            return Result.failure(NSError(domain: ErrorDomain, code: ErrorInvalidInput, userInfo: userInfo))
         }
     })
 
-    public static let dictionary: ValueTransformer<[String: JSONValue], JSONValue, NSError> = ValueTransformer(transformClosure: { value in
-        return success(.JSONObject(value))
+    public static let string: ReversibleValueTransformer<String, JSONValue, NSError> = ReversibleValueTransformer(transformClosure: { value in
+        return Result.success(.JSONString(value))
+    }, reverseTransformClosure: { value in
+        switch value {
+        case .JSONString(let value):
+            return Result.success(value)
+        default:
+            let userInfo = [
+                NSLocalizedDescriptionKey: NSLocalizedString("Could not decode string from JSON", comment: ""),
+                NSLocalizedFailureReasonErrorKey: String(format: NSLocalizedString("Expected a JSON string, got: %@.", comment: ""), value.description)
+            ]
+
+            return Result.failure(NSError(domain: ErrorDomain, code: ErrorInvalidInput, userInfo: userInfo))
+        }
+    })
+
+    public static let dictionary: ReversibleValueTransformer<[String: JSONValue], JSONValue, NSError> = ReversibleValueTransformer(transformClosure: { value in
+        return Result.success(.JSONObject(value))
     }, reverseTransformClosure: { value in
         switch value {
         case .JSONObject(let value):
-            return success(value)
+            return Result.success(value)
         default:
             let userInfo = [
                 NSLocalizedDescriptionKey: NSLocalizedString("Could not decode dictionary from JSON", comment: ""),
                 NSLocalizedFailureReasonErrorKey: String(format: NSLocalizedString("Expected a JSON dictionary, got: %@.", comment: ""), value.description)
             ]
 
-            return failure(NSError(domain: ErrorDomain, code: ErrorInvalidInput, userInfo: userInfo))
+            return Result.failure(NSError(domain: ErrorDomain, code: ErrorInvalidInput, userInfo: userInfo))
         }
     })
 
-    public static let array: ValueTransformer<[JSONValue], JSONValue, NSError> = ValueTransformer(transformClosure: { value in
-        return success(.JSONArray(value))
+    public static let array: ReversibleValueTransformer<[JSONValue], JSONValue, NSError> = ReversibleValueTransformer(transformClosure: { value in
+        return Result.success(.JSONArray(value))
     }, reverseTransformClosure: { value in
         switch value {
         case .JSONArray(let value):
-            return success(value)
+            return Result.success(value)
         default:
             let userInfo = [
                 NSLocalizedDescriptionKey: NSLocalizedString("Could not decode array from JSON", comment: ""),
                 NSLocalizedFailureReasonErrorKey: String(format: NSLocalizedString("Expected a JSON array, got: %@.", comment: ""), value.description)
             ]
 
-            return failure(NSError(domain: ErrorDomain, code: ErrorInvalidInput, userInfo: userInfo))
+            return Result.failure(NSError(domain: ErrorDomain, code: ErrorInvalidInput, userInfo: userInfo))
         }
     })
 }
 
 public func JSONNumber<A>(lens: Lens<A, Int8>) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, JSONValueTransformers.number())
+    return map(lens, JSONValueTransformers.number())
 }
 
-public func JSONNumber<A>(lens: Lens<A, Int8?>, defaultTransformedValue: @autoclosure () -> JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, lift(JSONValueTransformers.number(), defaultTransformedValue))
+public func JSONNumber<A>(lens: Lens<A, Int8?>, defaultTransformedValue: JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, lift(JSONValueTransformers.number(), defaultTransformedValue: defaultTransformedValue))
 }
 
 public func JSONNumber<A>(lens: Lens<A, UInt8>) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, JSONValueTransformers.number())
+    return map(lens, JSONValueTransformers.number())
 }
 
-public func JSONNumber<A>(lens: Lens<A, UInt8?>, defaultTransformedValue: @autoclosure () -> JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, lift(JSONValueTransformers.number(), defaultTransformedValue))
+public func JSONNumber<A>(lens: Lens<A, UInt8?>, defaultTransformedValue: JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, lift(JSONValueTransformers.number(), defaultTransformedValue: defaultTransformedValue))
 }
 
 public func JSONNumber<A>(lens: Lens<A, Int16>) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, JSONValueTransformers.number())
+    return map(lens, JSONValueTransformers.number())
 }
 
-public func JSONNumber<A>(lens: Lens<A, Int16?>, defaultTransformedValue: @autoclosure () -> JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, lift(JSONValueTransformers.number(), defaultTransformedValue))
+public func JSONNumber<A>(lens: Lens<A, Int16?>, defaultTransformedValue: JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, lift(JSONValueTransformers.number(), defaultTransformedValue: defaultTransformedValue))
 }
 
 public func JSONNumber<A>(lens: Lens<A, UInt16>) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, JSONValueTransformers.number())
+    return map(lens, JSONValueTransformers.number())
 }
 
-public func JSONNumber<A>(lens: Lens<A, UInt16?>, defaultTransformedValue: @autoclosure () -> JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, lift(JSONValueTransformers.number(), defaultTransformedValue))
+public func JSONNumber<A>(lens: Lens<A, UInt16?>, defaultTransformedValue: JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, lift(JSONValueTransformers.number(), defaultTransformedValue: defaultTransformedValue))
 }
 
 public func JSONNumber<A>(lens: Lens<A, Int32>) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, JSONValueTransformers.number())
+    return map(lens, JSONValueTransformers.number())
 }
 
-public func JSONNumber<A>(lens: Lens<A, Int32?>, defaultTransformedValue: @autoclosure () -> JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, lift(JSONValueTransformers.number(), defaultTransformedValue))
+public func JSONNumber<A>(lens: Lens<A, Int32?>, defaultTransformedValue: JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, lift(JSONValueTransformers.number(), defaultTransformedValue: defaultTransformedValue))
 }
 
 public func JSONNumber<A>(lens: Lens<A, UInt32>) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, JSONValueTransformers.number())
+    return map(lens, JSONValueTransformers.number())
 }
 
-public func JSONNumber<A>(lens: Lens<A, UInt32?>, defaultTransformedValue: @autoclosure () -> JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, lift(JSONValueTransformers.number(), defaultTransformedValue))
+public func JSONNumber<A>(lens: Lens<A, UInt32?>, defaultTransformedValue: JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, lift(JSONValueTransformers.number(), defaultTransformedValue: defaultTransformedValue))
 }
 
 public func JSONNumber<A>(lens: Lens<A, Int>) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, JSONValueTransformers.number())
+    return map(lens, JSONValueTransformers.number())
 }
 
-public func JSONNumber<A>(lens: Lens<A, Int?>, defaultTransformedValue: @autoclosure () -> JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, lift(JSONValueTransformers.number(), defaultTransformedValue))
+public func JSONNumber<A>(lens: Lens<A, Int?>, defaultTransformedValue: JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, lift(JSONValueTransformers.number(), defaultTransformedValue: defaultTransformedValue))
 }
 
 public func JSONNumber<A>(lens: Lens<A, UInt>) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, JSONValueTransformers.number())
+    return map(lens, JSONValueTransformers.number())
 }
 
-public func JSONNumber<A>(lens: Lens<A, UInt?>, defaultTransformedValue: @autoclosure () -> JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, lift(JSONValueTransformers.number(), defaultTransformedValue))
+public func JSONNumber<A>(lens: Lens<A, UInt?>, defaultTransformedValue: JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, lift(JSONValueTransformers.number(), defaultTransformedValue: defaultTransformedValue))
 }
 
 public func JSONNumber<A>(lens: Lens<A, Int64>) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, JSONValueTransformers.number())
+    return map(lens, JSONValueTransformers.number())
 }
 
-public func JSONNumber<A>(lens: Lens<A, Int64?>, defaultTransformedValue: @autoclosure () -> JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, lift(JSONValueTransformers.number(), defaultTransformedValue))
+public func JSONNumber<A>(lens: Lens<A, Int64?>, defaultTransformedValue: JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, lift(JSONValueTransformers.number(), defaultTransformedValue: defaultTransformedValue))
 }
 
 public func JSONNumber<A>(lens: Lens<A, UInt64>) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, JSONValueTransformers.number())
+    return map(lens, JSONValueTransformers.number())
 }
 
-public func JSONNumber<A>(lens: Lens<A, UInt64?>, defaultTransformedValue: @autoclosure () -> JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, lift(JSONValueTransformers.number(), defaultTransformedValue))
+public func JSONNumber<A>(lens: Lens<A, UInt64?>, defaultTransformedValue: JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, lift(JSONValueTransformers.number(), defaultTransformedValue: defaultTransformedValue))
 }
 
 public func JSONNumber<A>(lens: Lens<A, Float>) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, JSONValueTransformers.number())
+    return map(lens, JSONValueTransformers.number())
 }
 
-public func JSONNumber<A>(lens: Lens<A, Float?>, defaultTransformedValue: @autoclosure () -> JSONValue = .JSONNumber(0.0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, lift(JSONValueTransformers.number(), defaultTransformedValue))
+public func JSONNumber<A>(lens: Lens<A, Float?>, defaultTransformedValue: JSONValue = .JSONNumber(0.0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, lift(JSONValueTransformers.number(), defaultTransformedValue: defaultTransformedValue))
 }
 
 public func JSONNumber<A>(lens: Lens<A, Double>) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, JSONValueTransformers.number())
+    return map(lens, JSONValueTransformers.number())
 }
 
-public func JSONNumber<A>(lens: Lens<A, Double?>, defaultTransformedValue: @autoclosure () -> JSONValue = .JSONNumber(0.0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, lift(JSONValueTransformers.number(), defaultTransformedValue))
+public func JSONNumber<A>(lens: Lens<A, Double?>, defaultTransformedValue: JSONValue = .JSONNumber(0.0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, lift(JSONValueTransformers.number(), defaultTransformedValue: defaultTransformedValue))
 }
 
 public func JSONNumber<A>(lens: Lens<A, Bool>) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, JSONValueTransformers.number())
+    return map(lens, JSONValueTransformers.number())
 }
 
-public func JSONNumber<A>(lens: Lens<A, Bool?>, defaultTransformedValue: @autoclosure () -> JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, lift(JSONValueTransformers.number(), defaultTransformedValue))
-}
-
-public func JSONString<A>(lens: Lens<A, String>) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, JSONValueTransformers.string)
-}
-
-public func JSONString<A>(lens: Lens<A, String?>, defaultTransformedValue: @autoclosure () -> JSONValue = .JSONString("")) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, lift(JSONValueTransformers.string, defaultTransformedValue))
+public func JSONNumber<A>(lens: Lens<A, Bool?>, defaultTransformedValue: JSONValue = .JSONNumber(0)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, lift(JSONValueTransformers.number(), defaultTransformedValue: defaultTransformedValue))
 }
 
 public func JSONBool<A>(lens: Lens<A, Bool>) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, JSONValueTransformers.bool)
+    return map(lens, JSONValueTransformers.bool)
 }
 
-public func JSONBool<A>(lens: Lens<A, Bool?>, defaultTransformedValue: @autoclosure () -> JSONValue = .JSONNumber(false)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, lift(JSONValueTransformers.bool, defaultTransformedValue))
+public func JSONBool<A>(lens: Lens<A, Bool?>, defaultTransformedValue: JSONValue = .JSONNumber(false)) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, lift(JSONValueTransformers.bool, defaultTransformedValue: defaultTransformedValue))
 }
 
-public func JSONObject<A, B, T: Adapter where T.Model == B, T.Data == JSONValue, T.Error == NSError>(lens: Lens<A, B>)(adapter: T, model: @autoclosure () -> B) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, lift(adapter, model))
+public func JSONString<A>(lens: Lens<A, String>) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, JSONValueTransformers.string)
 }
 
-public func JSONObject<A, B, T: Adapter where T.Model == B, T.Data == JSONValue, T.Error == NSError>(lens: Lens<A, B?>, defaultTransformedValue: @autoclosure () -> JSONValue = .JSONNull)(adapter: T, model: @autoclosure () -> B) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, lift(lift(adapter, model), defaultTransformedValue))
+public func JSONString<A>(lens: Lens<A, String?>, defaultTransformedValue: JSONValue = .JSONString("")) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, lift(JSONValueTransformers.string, defaultTransformedValue: defaultTransformedValue))
 }
 
-public func JSONArray<A, B, T: Adapter where T.Model == B, T.Data == JSONValue, T.Error == NSError>(lens: Lens<A, [B]>)(adapter: T, model: @autoclosure () -> B) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, lift(lift(adapter, model)) >>> JSONValueTransformers.array)
+public func JSONObject<A, T: AdapterType where T.TransformedValueType == JSONValue, T.ErrorType == NSError>(lens: Lens<A, T.ValueType>)(adapter: T) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, adapter)
 }
 
-public func JSONArray<A, B, T: Adapter where T.Model == B, T.Data == JSONValue, T.Error == NSError>(lens: Lens<A, [B]?>, defaultTransformedValue: @autoclosure () -> JSONValue = .JSONNull)(adapter: T, model: @autoclosure () -> B) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return transform(lens, lift(lift(lift(adapter, model)) >>> JSONValueTransformers.array, defaultTransformedValue))
+public func JSONObject<A, T: AdapterType where T.TransformedValueType == JSONValue, T.ErrorType == NSError>(lens: Lens<A, T.ValueType?>, defaultTransformedValue: JSONValue = .JSONNull)(adapter: T) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, lift(adapter, defaultTransformedValue: defaultTransformedValue))
+}
+
+public func JSONArray<A, T: AdapterType where T.TransformedValueType == JSONValue, T.ErrorType == NSError>(lens: Lens<A, [T.ValueType]>)(adapter: T) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, lift(adapter) >>> JSONValueTransformers.array)
+}
+
+public func JSONArray<A, T: AdapterType where T.TransformedValueType == JSONValue, T.ErrorType == NSError>(lens: Lens<A, [T.ValueType]?>, defaultTransformedValue: JSONValue = .JSONNull)(adapter: T) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return map(lens, lift(lift(adapter) >>> JSONValueTransformers.array, defaultTransformedValue: defaultTransformedValue))
 }

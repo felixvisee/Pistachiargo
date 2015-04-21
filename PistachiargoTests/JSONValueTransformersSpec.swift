@@ -9,7 +9,7 @@
 import Quick
 import Nimble
 
-import LlamaKit
+import Result
 import Pistachio
 
 import Argo
@@ -21,21 +21,21 @@ class JSONValueTransformersSpec: QuickSpec {
             let valueTransformer = JSONValueTransformers.nsNumber
 
             it("should transform a value") {
-                let result = valueTransformer.transformedValue(NSNumber(integer: 1))
+                let result = valueTransformer.transform(NSNumber(integer: 1))
 
                 expect(result.value).to(equal(JSONValue.JSONNumber(1)))
             }
 
             it("should reverse transform a value") {
-                let result = valueTransformer.reverseTransformedValue(.JSONNumber(2.5))
+                let result = valueTransformer.reverseTransform(.JSONNumber(2.5))
 
                 expect(result.value).to(equal(NSNumber(float: 2.5)))
             }
 
             it("should fail if its value transformation fails") {
-                let result = valueTransformer.reverseTransformedValue(.JSONString("3"))
+                let result = valueTransformer.reverseTransform(.JSONString("3"))
 
-                expect(result.isSuccess).to(beFalse())
+                expect(result.value).to(beNil())
             }
         }
 
@@ -43,21 +43,21 @@ class JSONValueTransformersSpec: QuickSpec {
             let valueTransformer = JSONValueTransformers.string
 
             it("should transform a value") {
-                let result = valueTransformer.transformedValue("foo")
+                let result = valueTransformer.transform("foo")
 
                 expect(result.value).to(equal(JSONValue.JSONString("foo")))
             }
 
             it("should reverse transform a value") {
-                let result = valueTransformer.reverseTransformedValue(.JSONString("bar"))
+                let result = valueTransformer.reverseTransform(.JSONString("bar"))
 
                 expect(result.value).to(equal("bar"))
             }
 
             it("should fail if its value transformation fails") {
-                let result = valueTransformer.reverseTransformedValue(.JSONArray([ .JSONString("foobar") ]))
+                let result = valueTransformer.reverseTransform(.JSONArray([ .JSONString("foobar") ]))
 
-                expect(result.isSuccess).to(beFalse())
+                expect(result.value).to(beNil())
             }
         }
 
@@ -65,21 +65,21 @@ class JSONValueTransformersSpec: QuickSpec {
             let valueTransformer = JSONValueTransformers.bool
 
             it("should transform a value") {
-                let result = valueTransformer.transformedValue(true)
+                let result = valueTransformer.transform(true)
 
                 expect(result.value).to(equal(JSONValue.JSONNumber(true)))
             }
 
             it("should reverse transform a value") {
-                let result = valueTransformer.reverseTransformedValue(.JSONNumber(false))
+                let result = valueTransformer.reverseTransform(.JSONNumber(false))
 
                 expect(result.value).to(equal(false))
             }
 
             it("should fail if its value transformation fails") {
-                let result = valueTransformer.reverseTransformedValue(.JSONString("foobar"))
+                let result = valueTransformer.reverseTransform(.JSONString("foobar"))
 
-                expect(result.isSuccess).to(beFalse())
+                expect(result.value).to(beNil())
             }
         }
 
@@ -87,21 +87,21 @@ class JSONValueTransformersSpec: QuickSpec {
             let valueTransformer = JSONValueTransformers.dictionary
 
             it("should transform a value") {
-                let result = valueTransformer.transformedValue([ "foo": .JSONString("bar") ])
+                let result = valueTransformer.transform([ "foo": .JSONString("bar") ])
 
                 expect(result.value).to(equal(JSONValue.JSONObject([ "foo": .JSONString("bar") ])))
             }
 
             it("should reverse transform a value") {
-                let result = valueTransformer.reverseTransformedValue(.JSONObject([ "bar": .JSONString("foo") ]))
+                let result = valueTransformer.reverseTransform(.JSONObject([ "bar": .JSONString("foo") ]))
 
                 expect(result.value).to(equal([ "bar": .JSONString("foo") ]))
             }
 
             it("should fail if its value transformation fails") {
-                let result = valueTransformer.reverseTransformedValue(.JSONString("foobar"))
+                let result = valueTransformer.reverseTransform(.JSONString("foobar"))
 
-                expect(result.isSuccess).to(beFalse())
+                expect(result.value).to(beNil())
             }
         }
 
@@ -109,21 +109,21 @@ class JSONValueTransformersSpec: QuickSpec {
             let valueTransformer = JSONValueTransformers.array
 
             it("should transform a value") {
-                let result = valueTransformer.transformedValue([ .JSONString("foo") ])
+                let result = valueTransformer.transform([ .JSONString("foo") ])
 
                 expect(result.value).to(equal(JSONValue.JSONArray([ .JSONString("foo") ])))
             }
 
             it("should reverse transform a value") {
-                let result = valueTransformer.reverseTransformedValue(.JSONArray([ .JSONString("bar") ]))
+                let result = valueTransformer.reverseTransform(.JSONArray([ .JSONString("bar") ]))
 
                 expect(result.value).to(equal([ .JSONString("bar") ]))
             }
 
             it("should fail if its value transformation fails") {
-                let result = valueTransformer.reverseTransformedValue(.JSONString("foobar"))
+                let result = valueTransformer.reverseTransform(.JSONString("foobar"))
 
-                expect(result.isSuccess).to(beFalse())
+                expect(result.value).to(beNil())
             }
         }
     }

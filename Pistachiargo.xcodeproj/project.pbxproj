@@ -41,6 +41,20 @@
 		DCC740111AE6B7E300D7F341 /* JSONValueTransformers.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5B9D21A8AC89700667D32 /* JSONValueTransformers.swift */; };
 		DCC740141AE6B7EA00D7F341 /* JSONAdapterSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5B9D71A8AC93700667D32 /* JSONAdapterSpec.swift */; };
 		DCC740151AE6B7EA00D7F341 /* JSONValueTransformersSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCA5B9D81A8AC93700667D32 /* JSONValueTransformersSpec.swift */; };
+		DCE2DDEC1AF1A9100075FF3B /* Box.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCE2DDE61AF1A8C90075FF3B /* Box.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCE2DDED1AF1A92B0075FF3B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE2DDE91AF1A8F00075FF3B /* Result.framework */; };
+		DCE2DDEE1AF1A92B0075FF3B /* ValueTransformer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE2DDEB1AF1A8F00075FF3B /* ValueTransformer.framework */; };
+		DCE2DDEF1AF1A93B0075FF3B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE2DDE91AF1A8F00075FF3B /* Result.framework */; };
+		DCE2DDF01AF1A93B0075FF3B /* ValueTransformer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCE2DDEB1AF1A8F00075FF3B /* ValueTransformer.framework */; };
+		DCE2DDF21AF1A9520075FF3B /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCA5B9E41A8ACA4900667D32 /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCE2DDF31AF1A9520075FF3B /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCA5B9E31A8ACA4900667D32 /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCE2DDF41AF1A9520075FF3B /* Box.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCE2DDE71AF1A8F00075FF3B /* Box.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCE2DDF51AF1A9520075FF3B /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCE2DDE91AF1A8F00075FF3B /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCE2DDF61AF1A9520075FF3B /* ValueTransformer.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCE2DDEB1AF1A8F00075FF3B /* ValueTransformer.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCE2DDF71AF1A9520075FF3B /* Monocle.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCE2DDE81AF1A8F00075FF3B /* Monocle.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCE2DDF81AF1A9520075FF3B /* Pistachio.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCA5B9DE1A8ACA2700667D32 /* Pistachio.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCE2DDF91AF1A9520075FF3B /* Runes.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCE2DDEA1AF1A8F00075FF3B /* Runes.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		DCE2DDFA1AF1A9520075FF3B /* Argo.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = DCA5B9DD1A8ACA2700667D32 /* Argo.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,12 +83,31 @@
 			files = (
 				DCC740071AE6B7B600D7F341 /* Quick.framework in CopyFiles */,
 				DCC740081AE6B7B600D7F341 /* Nimble.framework in CopyFiles */,
+				DCE2DDEC1AF1A9100075FF3B /* Box.framework in CopyFiles */,
 				DCC740091AE6B7B700D7F341 /* Result.framework in CopyFiles */,
 				DCC7400A1AE6B7B700D7F341 /* ValueTransformer.framework in CopyFiles */,
 				DCC7400B1AE6B7B700D7F341 /* Monocle.framework in CopyFiles */,
 				DCC7400C1AE6B7B700D7F341 /* Pistachio.framework in CopyFiles */,
 				DCC7400D1AE6B7B700D7F341 /* Runes.framework in CopyFiles */,
 				DCC7400E1AE6B7B700D7F341 /* Argo.framework in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DCE2DDF11AF1A9420075FF3B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				DCE2DDF21AF1A9520075FF3B /* Quick.framework in CopyFiles */,
+				DCE2DDF31AF1A9520075FF3B /* Nimble.framework in CopyFiles */,
+				DCE2DDF41AF1A9520075FF3B /* Box.framework in CopyFiles */,
+				DCE2DDF51AF1A9520075FF3B /* Result.framework in CopyFiles */,
+				DCE2DDF61AF1A9520075FF3B /* ValueTransformer.framework in CopyFiles */,
+				DCE2DDF71AF1A9520075FF3B /* Monocle.framework in CopyFiles */,
+				DCE2DDF81AF1A9520075FF3B /* Pistachio.framework in CopyFiles */,
+				DCE2DDF91AF1A9520075FF3B /* Runes.framework in CopyFiles */,
+				DCE2DDFA1AF1A9520075FF3B /* Argo.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +138,12 @@
 		DCC73FFA1AE6B74E00D7F341 /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = "<group>"; };
 		DCC73FFB1AE6B74E00D7F341 /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/Mac/Runes.framework; sourceTree = "<group>"; };
 		DCC73FFC1AE6B74E00D7F341 /* ValueTransformer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ValueTransformer.framework; path = Carthage/Build/Mac/ValueTransformer.framework; sourceTree = "<group>"; };
+		DCE2DDE61AF1A8C90075FF3B /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Build/Mac/Box.framework; sourceTree = "<group>"; };
+		DCE2DDE71AF1A8F00075FF3B /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Build/iOS/Box.framework; sourceTree = "<group>"; };
+		DCE2DDE81AF1A8F00075FF3B /* Monocle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Monocle.framework; path = Carthage/Build/iOS/Monocle.framework; sourceTree = "<group>"; };
+		DCE2DDE91AF1A8F00075FF3B /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = "<group>"; };
+		DCE2DDEA1AF1A8F00075FF3B /* Runes.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Runes.framework; path = Carthage/Build/iOS/Runes.framework; sourceTree = "<group>"; };
+		DCE2DDEB1AF1A8F00075FF3B /* ValueTransformer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ValueTransformer.framework; path = Carthage/Build/iOS/ValueTransformer.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +151,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DCE2DDED1AF1A92B0075FF3B /* Result.framework in Frameworks */,
+				DCE2DDEE1AF1A92B0075FF3B /* ValueTransformer.framework in Frameworks */,
 				DCA5B9E01A8ACA2700667D32 /* Pistachio.framework in Frameworks */,
 				DCA5B9DF1A8ACA2700667D32 /* Argo.framework in Frameworks */,
 			);
@@ -123,6 +164,8 @@
 			files = (
 				DCA5B9E61A8ACA4900667D32 /* Quick.framework in Frameworks */,
 				DCA5B9E51A8ACA4900667D32 /* Nimble.framework in Frameworks */,
+				DCE2DDEF1AF1A93B0075FF3B /* Result.framework in Frameworks */,
+				DCE2DDF01AF1A93B0075FF3B /* ValueTransformer.framework in Frameworks */,
 				DCA5B9BF1A8AC74800667D32 /* Pistachiargo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,7 +268,12 @@
 			children = (
 				DCA5B9E41A8ACA4900667D32 /* Quick.framework */,
 				DCA5B9E31A8ACA4900667D32 /* Nimble.framework */,
+				DCE2DDE71AF1A8F00075FF3B /* Box.framework */,
+				DCE2DDE91AF1A8F00075FF3B /* Result.framework */,
+				DCE2DDEB1AF1A8F00075FF3B /* ValueTransformer.framework */,
+				DCE2DDE81AF1A8F00075FF3B /* Monocle.framework */,
 				DCA5B9DE1A8ACA2700667D32 /* Pistachio.framework */,
+				DCE2DDEA1AF1A8F00075FF3B /* Runes.framework */,
 				DCA5B9DD1A8ACA2700667D32 /* Argo.framework */,
 			);
 			name = iOS;
@@ -236,6 +284,7 @@
 			children = (
 				DCC73FF91AE6B74E00D7F341 /* Quick.framework */,
 				DCC73FF71AE6B74E00D7F341 /* Nimble.framework */,
+				DCE2DDE61AF1A8C90075FF3B /* Box.framework */,
 				DCC73FFA1AE6B74E00D7F341 /* Result.framework */,
 				DCC73FFC1AE6B74E00D7F341 /* ValueTransformer.framework */,
 				DCC73FF61AE6B74E00D7F341 /* Monocle.framework */,
@@ -302,6 +351,7 @@
 				DCA5B9BA1A8AC74800667D32 /* Sources */,
 				DCA5B9BB1A8AC74800667D32 /* Frameworks */,
 				DCA5B9BC1A8AC74800667D32 /* Resources */,
+				DCE2DDF11AF1A9420075FF3B /* CopyFiles */,
 			);
 			buildRules = (
 			);

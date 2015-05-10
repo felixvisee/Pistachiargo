@@ -1,6 +1,6 @@
 //  Copyright (c) 2015 Felix Jendrusch. All rights reserved.
 
-#import <Foundation/Foundation.h>
+@import Foundation;
 
 //! Project version number for Pistachiargo.
 FOUNDATION_EXPORT double PistachiargoVersionNumber;

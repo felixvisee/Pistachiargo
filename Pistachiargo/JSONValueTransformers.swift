@@ -265,18 +265,26 @@ public func JSONString<A>(lens: Lens<A, String?>, defaultTransformedValue: JSONV
     return map(lens, lift(JSONValueTransformers.string, defaultTransformedValue: defaultTransformedValue))
 }
 
-public func JSONObject<A, T: AdapterType where T.TransformedValueType == JSONValue, T.ErrorType == NSError>(lens: Lens<A, T.ValueType>)(adapter: T) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return map(lens, adapter)
+public func JSONObject<A, T: AdapterType where T.TransformedValueType == JSONValue, T.ErrorType == NSError>(lens: Lens<A, T.ValueType>) -> (adapter: T) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return { adapter in
+        return map(lens, adapter)
+    }
 }
 
-public func JSONObject<A, T: AdapterType where T.TransformedValueType == JSONValue, T.ErrorType == NSError>(lens: Lens<A, T.ValueType?>, defaultTransformedValue: JSONValue = .JSONNull)(adapter: T) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return map(lens, lift(adapter, defaultTransformedValue: defaultTransformedValue))
+public func JSONObject<A, T: AdapterType where T.TransformedValueType == JSONValue, T.ErrorType == NSError>(lens: Lens<A, T.ValueType?>, defaultTransformedValue: JSONValue = .JSONNull) -> (adapter: T) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return { adapter in
+        return map(lens, lift(adapter, defaultTransformedValue: defaultTransformedValue))
+    }
 }
 
-public func JSONArray<A, T: AdapterType where T.TransformedValueType == JSONValue, T.ErrorType == NSError>(lens: Lens<A, [T.ValueType]>)(adapter: T) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return map(lens, lift(adapter) >>> JSONValueTransformers.array)
+public func JSONArray<A, T: AdapterType where T.TransformedValueType == JSONValue, T.ErrorType == NSError>(lens: Lens<A, [T.ValueType]>) -> (adapter: T) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return { adapter in
+        return map(lens, lift(adapter) >>> JSONValueTransformers.array)
+    }
 }
 
-public func JSONArray<A, T: AdapterType where T.TransformedValueType == JSONValue, T.ErrorType == NSError>(lens: Lens<A, [T.ValueType]?>, defaultTransformedValue: JSONValue = .JSONNull)(adapter: T) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
-    return map(lens, lift(lift(adapter) >>> JSONValueTransformers.array, defaultTransformedValue: defaultTransformedValue))
+public func JSONArray<A, T: AdapterType where T.TransformedValueType == JSONValue, T.ErrorType == NSError>(lens: Lens<A, [T.ValueType]?>, defaultTransformedValue: JSONValue = .JSONNull) -> (adapter: T) -> Lens<Result<A, NSError>, Result<JSONValue, NSError>> {
+    return { adapter in
+        return map(lens, lift(lift(adapter) >>> JSONValueTransformers.array, defaultTransformedValue: defaultTransformedValue))
+    }
 }
